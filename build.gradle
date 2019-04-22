@@ -1,0 +1,116 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core" }
+        maven { url "https://repository.primefaces.org/" }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.0.10"
+    }
+}
+
+version "0.1"
+group "net.prominic.grails.plugins"
+
+apply plugin:"eclipse"
+apply plugin:"idea"
+apply plugin:"org.grails.grails-plugin"
+apply plugin:"org.grails.grails-plugin-publish"
+apply plugin:"asset-pipeline"
+apply plugin:"org.grails.grails-gsp"
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
+    maven { url "https://repository.primefaces.org/" }
+}
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+dependencies {
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    compile "org.springframework.boot:spring-boot-starter-logging"
+    compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile "org.grails:grails-core"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile "org.grails:grails-web-boot"
+    compile "org.grails:grails-logging"
+    compile "org.grails:grails-plugin-rest"
+    compile "org.grails:grails-plugin-databinding"
+    compile "org.grails:grails-plugin-i18n"
+    compile "org.grails:grails-plugin-services"
+    compile "org.grails:grails-plugin-url-mappings"
+    compile "org.grails:grails-plugin-interceptors"
+    compile "org.grails.plugins:cache"
+    compile "org.grails.plugins:async"
+    compile "org.grails.plugins:scaffolding"
+    compile "org.grails.plugins:gsp"
+    console "org.grails:grails-console"
+    profile "org.grails.profiles:web-plugin"
+    provided "org.grails:grails-plugin-services"
+    provided "org.grails:grails-plugin-domain-class"
+    runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.0.10"
+    testCompile "org.grails:grails-gorm-testing-support"
+    testCompile "org.mockito:mockito-core"
+    //testCompile "org.grails:grails-plugin-testing"
+    testCompile "org.grails:grails-web-testing-support"
+
+    runtime "org.grails:grails-web-jsp:3.3.1"
+
+
+    compile 'org.springframework.webflow:spring-webflow:2.5.0.RELEASE'
+    compile 'org.springframework.webflow:spring-faces:2.5.0.RELEASE'
+    compile 'org.glassfish:javax.faces:2.2.17'
+    compile 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
+
+    compile 'org.glassfish:javax.el:3.0.0'
+    //compile 'el-impl:javax.el-impl:3.0.1.b08-redhat-1'
+    //compile 'javax.el:javax.el-api:3.0.1-b06'
+    // in case of issues - replace with 'compile'
+    provided 'javax.el:javax.el-api:3.0.0'
+    provided 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.2'
+
+    compile 'org.primefaces:primefaces:6.2'
+    compile 'org.primefaces.extensions:primefaces-extensions:6.2.4'
+    compile 'org.primefaces.themes:all-themes:1.0.10'
+
+    compile 'log4j:log4j:1.2.17'
+    //compile 'org.grails:grails-datastore-rest-client:5.0.0.RC2'
+}
+
+bootRun {
+    jvmArgs(
+        '-Dspring.output.ansi.enabled=always', 
+        '-noverify', 
+        '-XX:TieredStopAtLevel=1',
+        '-Xmx1024m')
+    sourceResources sourceSets.main
+    String springProfilesActive = 'spring.profiles.active'
+    systemProperty springProfilesActive, System.getProperty(springProfilesActive)
+}
+// enable if you wish to package this plugin as a standalone application
+bootJar.enabled = false
+grailsPublish {
+    // TODO: Provide values here
+    user = 'user'
+    key = 'key'
+    githubSlug = 'foo/bar'
+    license {
+        name = 'Apache-2.0'
+    }
+    title = "My Plugin"
+    desc = "Full plugin description"
+    developers = [johndoe:"John Doe"]
+}
+
+
+assets {
+    packagePlugin = true
+}
