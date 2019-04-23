@@ -14,11 +14,6 @@ import grails.core.support.GrailsApplicationAware
 import com.sun.faces.config.ConfigureListener
 
 import groovy.util.logging.Slf4j
-
-/**
-* The class auto generate by grails framework , we change it add some document information
-* Data: 2019-04-21
-*/
  
 @Slf4j
 class Grails4PrimeFacesPluginGrailsPlugin extends Plugin {

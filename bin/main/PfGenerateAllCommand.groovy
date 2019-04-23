@@ -5,12 +5,12 @@ import grails.dev.commands.*
 import grails.util.GrailsNameUtils
 import groovy.text.SimpleTemplateEngine
 
-   /**
-    * The command will auto  generate the bean,service from domain class .
-    * source file https://github.com/andreaminnucci/primefaces
-    * Modify & Improve: Prominic -Bing Li
-    * Data: 2019-04-21
-    */
+    /**
+     * The command will auto  generate the bean,service from domain class .
+     * source file https://github.com/andreaminnucci/primefaces
+     * Modify & Improve: Prominic -Bing Li
+     * Data: 2019-04-21
+     */
 class PfGenerateAllCommand implements GrailsApplicationCommand {
     /** The syntax for this command */
     private static final String SYNTAX = "SYNTAX:  grails run-command pf-generate-all <domain>"

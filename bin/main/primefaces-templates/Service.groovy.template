@@ -3,10 +3,6 @@ package ${packageName}
 import grails.gorm.transactions.*
 import org.springframework.validation.FieldError
 
-/**
- * The class auto generate by pf-all-command ,it is service for the bean.
- */
-
 @Transactional
 class ${domainClassName}Service {
 

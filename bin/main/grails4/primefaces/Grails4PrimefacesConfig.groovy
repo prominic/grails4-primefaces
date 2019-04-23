@@ -16,11 +16,8 @@ import com.sun.el.ExpressionFactoryImpl
 import groovy.util.logging.Slf4j
  
 /**
-* The class will defined the all configuration for JSF page,and inistal the primeface framework in here.
-* The grails framwork will loading these configuraiton from this class ,rather than loading them from web.xml
-* Author: Prominic -Bing Li
-* Data: 2019-04-21
-*/
+ * Created by featger812002@163.com on 2019/4/03.
+ */
 @Slf4j
 class Grails4PrimeFacesConfig  implements GrailsApplicationAware{
     GrailsApplication grailsApplication

@@ -4,6 +4,13 @@ import grails.util.Holders;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
+/**
+* The class privode some utils function for bean.。
+* That mean it can work with grails i118 message file.
+* source file https://github.com/andreaminnucci/primefaces
+* Modify & Improve: Prominic -Bing Li
+* Data: 2019-04-21
+*/
 
 public class WebApplicationUtils {
 

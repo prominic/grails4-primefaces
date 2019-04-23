@@ -17,13 +17,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import javax.faces.bean.ApplicationScoped;
 
-/**
-* The Bean will loading i118 message from spring  MessageSource.
-* That mean it can work with grails i118 message file.
-* source file https://github.com/andreaminnucci/primefaces
-* Modify & Improve: Prominic -Bing Li
-* Data: 2019-04-21
-*/
+//
 
 @ManagedBean(name = "message", eager = true)
 @ApplicationScoped

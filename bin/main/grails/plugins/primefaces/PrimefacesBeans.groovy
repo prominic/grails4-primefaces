@@ -27,14 +27,6 @@ import grails.core.GrailsApplication
 import grails.util.Holders
 
 import groovy.util.logging.Slf4j
-
-/**
-* The Bean will loading all bean after grails framework already starting。
-* That mean it can work with grails i118 message file.
-* source file https://github.com/andreaminnucci/primefaces
-* Modify & Improve: Prominic -Bing Li
-* Data: 2019-04-21
-*/
  
 @Slf4j
 public class PrimefacesBeans {

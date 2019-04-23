@@ -6,11 +6,8 @@ import com.sun.faces.config.ConfigureListener
 
 
 /**
-* The class will force the container add the configuration listener ,
-* so that it can loading the primeface configuration.
-* Author: Prominic - Bing Li
-* Data: 2019-04-21
-*/
+ * Created by prominic2 on 2018/4/20.
+ */
 class Grails4PrimeFacesWebAppInitializer implements WebApplicationInitializer{
 
     @Override

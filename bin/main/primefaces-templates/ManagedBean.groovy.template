@@ -20,10 +20,6 @@ import org.primefaces.model.LazyDataModel
 
 import org.springframework.validation.FieldError
 
-/**
- * The class auto generate by pf-all-command ,it provide CURD action in this file.
- */
-
 @ManagedBean(name = "${propertyName}MB")
 @SessionScoped
 class ${domainClassName}ManagedBean implements Serializable {
