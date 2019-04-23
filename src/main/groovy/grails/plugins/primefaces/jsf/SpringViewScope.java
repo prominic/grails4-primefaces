@@ -7,6 +7,15 @@ import org.springframework.beans.factory.config.Scope;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+/**
+* The class will  implements view scope for spring framework ,so that the JSF page can correct work with grails.
+* When you call any bean in grails framework , 
+* you can found it will call this class then add the bean into view-map of FacesContext.
+* source file https://github.com/andreaminnucci/primefaces
+* Modify &amp; Improve: Prominic -Bing Li
+* Data: 2019-04-21
+*/
  
 public class SpringViewScope implements Scope {
     private static Logger log = LoggerFactory.getLogger("test.TestJavaLogging");
