@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 * The class privode some utils function for bean.。
 * That mean it can work with grails i118 message file.
 * source file https://github.com/andreaminnucci/primefaces
-* Modify & Improve: Prominic -Bing Li
+* Modify &amp; Improve: Prominic -Bing Li
 * Data: 2019-04-21
 */
 

@@ -21,7 +21,7 @@ import javax.faces.bean.ApplicationScoped;
 * The Bean will loading i118 message from spring  MessageSource.
 * That mean it can work with grails i118 message file.
 * source file https://github.com/andreaminnucci/primefaces
-* Modify & Improve: Prominic -Bing Li
+* Modify &amp; Improve: Prominic -Bing Li
 * Data: 2019-04-21
 */
 
