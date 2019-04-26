@@ -1,0 +1,56 @@
+/**
+* The document will details the primeface how to work and the details each file.
+* Author: Prominic -Bing Li
+* Data: 2019-04-26
+*/
+
+# Summary
+    In short ,integrate the primeface UI framework into Grails framework ,we need follow 3 steps:
+    1. When the spring framework starting ,we need loading all bean into container.
+    2. Custom the Grails4PrimeFacesConfig and implements it from GrailsApplicationAware.
+       Loading the Grails4PrimeFacesConfig when the spring starting.
+    3. Face all /faces/** url request map to FacesServlet , this still need force register when the spring starting.
+
+    So yo can check these steps from Grails4PrimeFacesPluginGrailsPlugin -doWithSpring method.
+
+
+
+# Core file
+
+    1.  Grails4PrimeFacesConfig - defined the primefeace configuration.
+    2.  Grails4PrimeFacesWebAppInitializer - add WebApplicationInitializer , let the container starting can loading the primefeace config.
+    3.  Grails4PrimeFacesPluginGrailsPlugin - this auto genearte by grails framework , but we need add some function into doWithSpring function.
+    4.  PrimefacesBeans - this file will loading all bean when the spring starting.
+    5.  SpringViewScope - this file will let spring can scan & get bean from  spring view scope. 
+
+
+# Additional file
+    1.PfGenerateAllCommand -- command file ,it can auto generate the bean and service from domain class.
+    2.MessageSourceBean    -- message file ,it can let JSF page can loading message from i118 files.
+    3.WebApplicationUtils  -- web utils file ,it can help the primefeace plugin easy work with grails .
+
+# Config files & Resources files
+    1. Tag library files .
+        You can found so much *.tld from src/main/resources/WEB-INF/tld
+        These fiels are tag lib fiels ,more details you found it in here :
+        https://gsp.grails.org/latest/guide/taglibs.html.
+        If you want work with JSP tag or other some tag in the JSF page,
+        You should copy these fiels from the plugin into same foler of  your application .
+    
+    2. Container configuration files
+        You can found some *.xml file from src/main/resources/WEB-INF.
+        applicationContext.xml
+        faces-config.xml 
+        sotmesh.xml 
+
+        These files will defined the JSF(Primefaces) how to correct work with grails framework.
+        You must should copy these files from here to your application in same folder.
+    3. Templates files
+        We create a grails command file :PfGenerateAllCommand , let you can easy get the bean and service from domain class.
+        So , we need some file templates to generate the file .
+        The templates files exist in the src/main/resources/primefaces-templates folder.
+
+
+
+
+
