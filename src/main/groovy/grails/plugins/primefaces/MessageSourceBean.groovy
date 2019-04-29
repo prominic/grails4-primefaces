@@ -35,9 +35,7 @@ public class MessageSourceBean extends BeanELResolver {
         messageSource = WebApplicationUtils.getBean("messageSource");
     }
 
-    public void test(){
-        println "this is test "
-    }
+    
 
     public String i18n(String code, String... args) {
         log.debug "Code:  $code"

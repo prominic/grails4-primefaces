@@ -14,6 +14,9 @@ import com.sun.faces.config.FacesInitializer
 import com.sun.el.ExpressionFactoryImpl
 
 import groovy.util.logging.Slf4j
+import grails.util.Holders
+
+import com.prominic.primeface.ThemeService
  
 /**
 * The class will defined the all configuration for JSF page,and inistal the primeface framework in here.
@@ -24,6 +27,7 @@ import groovy.util.logging.Slf4j
 @Slf4j
 class Grails4PrimeFacesConfig  implements GrailsApplicationAware{
     GrailsApplication grailsApplication
+    def servletContext =Holders.getServletContext()
 
     public void setGrailsApplication(GrailsApplication grailsApplication){
         this.grailsApplication=grailsApplication
@@ -35,8 +39,12 @@ class Grails4PrimeFacesConfig  implements GrailsApplicationAware{
         return new ServletContextInitializer() {
             @Override
             void onStartup(ServletContext servletContext) throws ServletException {
+                def themeService=Holders.grailsApplication.mainContext.getBean 'themeService'
+                
+                
                 log.info "******* grails4-primefaces Initializer Started **********"
-                servletContext.setInitParameter("primefaces.THEME", "start");
+                // servletContext.setAttribute("primefaces.THEME",themeService.theme)
+                servletContext.setInitParameter("primefaces.THEME", themeService.theme);
                 servletContext.setInitParameter("primefaces.FONT_AWESOME", "true");
                 servletContext.setInitParameter("javax.faces.DEFAULT_SUFFIX", ".xhtml");
                 servletContext.setInitParameter("contextConfigLocation", "/WEB-INF/applicationContext.xml");
