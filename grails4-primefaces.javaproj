@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Project file for Moonshine-IDE (https://github.com/prominic/Moonshine-IDE).
+ -->
+<project>
+  <classpaths>
+    <class path="grails-app/commands"/>
+    <class path="grails-app/controllers"/>
+    <class path="grails-app/services"/>
+    <class path="src/main/groovy"/>
+    <class path="src/main/java"/>
+  </classpaths>
+  <build>
+    <option mainclass=""/>
+  </build>
+  <options>
+  </options>
+</project>
