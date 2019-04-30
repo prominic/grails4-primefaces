@@ -1,3 +1,4 @@
+//Default application config file.
 package grails4.primefaces
 
 import grails.boot.*

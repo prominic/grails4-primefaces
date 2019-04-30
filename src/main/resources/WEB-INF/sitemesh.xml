@@ -1,3 +1,6 @@
+<!--
+This xml file  defined the  HTML page parser class for JSF page.
+-->
 <sitemesh>
     <page-parsers>
         <parser content-type="text/html"

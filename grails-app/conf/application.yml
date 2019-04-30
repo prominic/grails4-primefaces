@@ -1,3 +1,4 @@
+#Default application.yml generate by grails framwork
 ---
 grails:
     profile: web-plugin

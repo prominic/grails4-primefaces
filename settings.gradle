@@ -1,1 +1,2 @@
+//default gradle config file 
 rootProject.name = 'grails4-primefaces'

@@ -1,3 +1,4 @@
+//Default log config file ,generate by grails framework
 import grails.util.BuildSettings
 import grails.util.Environment
 import org.springframework.boot.logging.logback.ColorConverter

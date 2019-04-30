@@ -1,3 +1,4 @@
+//Default url map config file, it generate by grails framework itself.
 package grails4.primefaces
 
 class UrlMappings {
