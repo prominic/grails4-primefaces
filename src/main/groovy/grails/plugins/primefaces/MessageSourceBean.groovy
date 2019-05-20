@@ -5,6 +5,7 @@ import org.springframework.validation.ObjectError
 import java.util.logging.Logger;
 
 import static grails.plugins.primefaces.WebApplicationUtils.getSession;
+import groovy.util.logging.Slf4j
 import java.util.*;
 import javax.el.BeanELResolver;
 import javax.faces.application.FacesMessage;
@@ -27,8 +28,8 @@ import javax.faces.bean.ApplicationScoped;
 
 @ManagedBean(name = "message", eager = true)
 @ApplicationScoped
+@Slf4j
 public class MessageSourceBean extends BeanELResolver {
-    private Logger log = Logger.getLogger(MessageSourceBean.class);
 
     private MessageSource messageSource;
     public MessageSourceBean() {

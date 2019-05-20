@@ -59,6 +59,44 @@ To run with the default Tomcat container, you will also need to add these WEB-IN
 </web-app>
 ```
 
+
+### Theme
+
+To set the theme to one of the default [community themes](https://www.primefaces.org/themes/), set the grails.plugins.primefaces.theme configuration value.  For example in grails-app/conf/application.yml:
+
+```
+grails:
+    plugins:
+        primefaces:
+            #...
+            theme: afterdark
+```
+
+If you want to experiment with the themes, you can add use a ThemeSwitcher and the themeMB bean:
+
+```
+        <p:themeSwitcher id="template" style="width:165px"  value="#{themeMB.theme}" >
+            <f:selectItem itemLabel="Choose Theme" itemValue="#{null}" />
+            <f:selectItems value="#{themeMB.themeList}" var="theme" itemLabel="#{theme}" itemValue="#{theme}" />
+        </p:themeSwitcher>
+
+```
+
+If you want to add custom themes to the ThemeSwitcher, you can use the grails.plugins.primefaces.customThemes configuration value:
+
+```
+grails:
+    plugins:
+        primefaces:
+            #...
+            customThemes:
+                - ultima-blue
+                - ultima-blue-grey
+```
+
+
+### Example
+
 You can see an example project and some demo instructions in [this project](https://github.com/prominic/grails4-primefaces-demo)
 
 ## Dependencies

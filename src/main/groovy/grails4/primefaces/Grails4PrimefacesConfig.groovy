@@ -39,12 +39,19 @@ class Grails4PrimeFacesConfig  implements GrailsApplicationAware{
         return new ServletContextInitializer() {
             @Override
             void onStartup(ServletContext servletContext) throws ServletException {
-                def themeService=Holders.grailsApplication.mainContext.getBean 'themeService'
-                
-                
                 log.info "******* grails4-primefaces Initializer Started **********"
-                // servletContext.setAttribute("primefaces.THEME",themeService.theme)
-                servletContext.setInitParameter("primefaces.THEME", themeService.theme);
+
+                // Theme
+                def themeService=Holders.grailsApplication.mainContext.getBean 'themeService'
+                def theme = themeService.configTheme
+                if(theme){
+                     log.info "Using configured theme:  '$theme'"
+                     servletContext.setInitParameter("primefaces.THEME", theme);
+                }
+                else {
+                    log.info('Using default theme.')
+                }
+
                 servletContext.setInitParameter("primefaces.FONT_AWESOME", "true");
                 servletContext.setInitParameter("javax.faces.DEFAULT_SUFFIX", ".xhtml");
                 servletContext.setInitParameter("contextConfigLocation", "/WEB-INF/applicationContext.xml");
