@@ -1,6 +1,9 @@
 package grails4.primefaces
+
 import grails.core.GrailsApplication
 import grails.core.support.GrailsApplicationAware
+
+import grails.plugins.primefaces.ThemeService
 
 import javax.servlet.DispatcherType
 import javax.servlet.ServletContext
@@ -15,8 +18,6 @@ import com.sun.el.ExpressionFactoryImpl
 
 import groovy.util.logging.Slf4j
 import grails.util.Holders
-
-import com.prominic.primeface.ThemeService
  
 /**
 * The class will defined the all configuration for JSF page,and inistal the primeface framework in here.
@@ -42,7 +43,7 @@ class Grails4PrimeFacesConfig  implements GrailsApplicationAware{
                 log.info "******* grails4-primefaces Initializer Started **********"
 
                 // Theme
-                def themeService=Holders.grailsApplication.mainContext.getBean 'themeService'
+                ThemeService themeService=Holders.grailsApplication.mainContext.getBean 'themeService'
                 def theme = themeService.configTheme
                 if(theme){
                      log.info "Using configured theme:  '$theme'"

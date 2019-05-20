@@ -1,4 +1,4 @@
-package com.prominic.primeface
+package grails.plugins.primefaces
 
 import grails.gorm.transactions.Transactional
 

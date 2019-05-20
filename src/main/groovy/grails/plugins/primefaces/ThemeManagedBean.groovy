@@ -2,7 +2,7 @@ package grails.plugins.primefaces
 
 import groovy.util.logging.Slf4j
 import grails.util.Holders
-import com.prominic.primeface.ThemeService
+import grails.plugins.primefaces.ThemeService
 import javax.faces.bean.ApplicationScoped
 import javax.faces.bean.ManagedBean
 
