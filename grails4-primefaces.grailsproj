@@ -1,0 +1,26 @@
+<project>
+  <grailsBuild>
+    <option commandLine="gradle clean install"/>
+    <actions>
+      <action actionName="Clean" action="clean"/>
+      <action actionName="Compile Project" action="compile"/>
+      <action actionName="Compile and Run Project" action="run-app"/>
+      <action actionName="Test Project" action="test-app"/>
+      <action actionName="Release Project" action="war"/>
+      <action actionName="Create a Service" action="create-service &lt;name>"/>
+      <action actionName="Create a Domain" action="create-domain &lt;name>"/>
+      <action actionName="Create a Controller" action="create-controller &lt;name>"/>
+      <action actionName="" action="gradle install"/>
+      <action actionName="" action="gradle clean install"/>
+    </actions>
+  </grailsBuild>
+  <classpaths>
+    <class path="src/main/groovy"/>
+    <class path="src/main/java"/>
+    <class path="grails-app/controllers"/>
+    <class path="grails-app/services"/>
+    <class path="scripts"/>
+    <class path="src/test/groovy"/>
+    <class path="src/test/java"/>
+  </classpaths>
+</project>
